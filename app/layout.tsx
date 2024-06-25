@@ -5,7 +5,6 @@ import "./globals.css";
 import "../styles/theme.css";
 import React from "react";
 import { ClerkProvider } from "@clerk/nextjs";
-import ThemeProvider from "@/context/ThemeProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -33,7 +32,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={` ${inter.variable} ${spaceGrotesk.variable}`}>
         <ClerkProvider>
-          <ThemeProvider>{children}</ThemeProvider>
+          {children}
           </ClerkProvider>
       </body>
     </html>

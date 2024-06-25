@@ -11,7 +11,7 @@ export const columns: ColumnDef<CollectionType>[] = [
     header: "Title",
     cell: ({ row }) => (
       <Link
-        href={`/dashboard/collections/${row.original._id}`}
+        href={`/collections/${row.original._id}`}
         className="hover:text-red-500"
       >
         {row.original.title}

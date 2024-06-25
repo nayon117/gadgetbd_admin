@@ -52,6 +52,23 @@ export interface CreateUserParams {
     createdAt: string;
     updatedAt: string;
   };
- 
+  export interface CustomerType {
+    clerkId: string;
+    name: string;
+    email: string;
+  }
+  export interface OrderColumnType  {
+    _id: string;
+    customer: string;
+    products: number;
+    totalAmount: number;
+    createdAt: string;
+  }
 
+ export interface OrderItemType  {
+    product: ProductType
+    color: string;
+    size: string;
+    quantity: number;
+  }
   
