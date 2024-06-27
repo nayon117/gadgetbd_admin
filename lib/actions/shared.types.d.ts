@@ -67,8 +67,6 @@ export interface CreateUserParams {
 
  export interface OrderItemType  {
     product: ProductType
-    color: string;
-    size: string;
     quantity: number;
   }
   

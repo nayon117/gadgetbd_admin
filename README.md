@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# GadgetBD Admin Dashboard
 
-## Getting Started
+## Overview
 
-First, run the development server:
+The GadgetBD Admin Dashboard is a comprehensive tool for managing the e-commerce platform. It includes features for managing products, collections, orders, customers, and generating sales reports.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. **Customer Management**
+   - Display a list of all customers.
+   - View and edit customer details.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. **Product Management**
+   - Add, edit, delete, and categorize products.
+   - View a list of all products.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. **Order Management**
+   - View and manage orders.
+   - Update order statuses.
 
-## Learn More
+4. **Collection Management**
+   - Add, edit, delete collections.
+   - View a list of all collections.
 
-To learn more about Next.js, take a look at the following resources:
+5. **Sales Reports**
+   - Generate reports on sales, revenue, and other key metrics.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Technologies Used
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **Next.js**: For building the front-end and server-side rendering.
+- **TypeScript**: For type-safe JavaScript development.
+- **Zustand**: For state management.
+- **Mongoose**: For MongoDB object modeling.
+- **Clerk**: For authentication and user management.
 
-## Deploy on Vercel
+## Installation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/yourusername/gadgetbd-admin.git
+2. cd gadgetbd
+3. npm install
+4. and don't forget to add .env.local file
