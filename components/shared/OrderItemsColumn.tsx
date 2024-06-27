@@ -12,20 +12,12 @@ export const columns: ColumnDef<OrderItemType>[] = [
       return (
         <Link
           href={`/products/${row.original.product._id}`}
-          className="hover:text-red-500"
+          className="primary-text-gradient"
         >
           {row.original.product.title}
         </Link>
       );
     },
-  },
-  {
-    accessorKey: "color",
-    header: "Color",
-  },
-  {
-    accessorKey: "size",
-    header: "Size",
   },
   {
     accessorKey: "quantity",

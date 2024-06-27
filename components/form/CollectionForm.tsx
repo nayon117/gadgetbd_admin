@@ -111,6 +111,23 @@ const CollectionForm: React.FC<CollectionFormProps> = ({ initialData }) => {
           />
           <FormField
             control={form.control}
+            name="image"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Image</FormLabel>
+                <FormControl>
+                  <ImageUpload
+                    value={field.value ? [field.value] : []}
+                    onChange={(url) => field.onChange(url)}
+                    onRemove={() => field.onChange("")}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+           <FormField
+            control={form.control}
             name="description"
             render={({ field }) => (
               <FormItem>
@@ -127,33 +144,16 @@ const CollectionForm: React.FC<CollectionFormProps> = ({ initialData }) => {
               </FormItem>
             )}
           />
-          <FormField
-            control={form.control}
-            name="image"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Image</FormLabel>
-                <FormControl>
-                  <ImageUpload
-                    value={field.value ? [field.value] : []}
-                    onChange={(url) => field.onChange(url)}
-                    onRemove={() => field.onChange("")}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
           <div className="flex gap-10">
           <Button
               type="button"
               onClick={() => router.push("/dashboard/collections")}
-              className="bg-blue-400 text-white"
+              className="primary-gradient text-white"
               disabled={loading}
             >
               Discard
             </Button>
-            <Button disabled={loading} type="submit" className="bg-blue-400 text-white">
+            <Button disabled={loading} type="submit" className="primary-gradient text-white">
             {loading ? "Submitting..." : "Submit"}
             </Button>
            

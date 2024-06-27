@@ -12,7 +12,7 @@ export const columns: ColumnDef<OrderColumnType>[] = [
       return (
         <Link
           href={`/orders/${row.original._id}`}
-          className="hover:text-red-500"
+          className="primary-text-gradient"
         >
           {row.original._id}
         </Link>

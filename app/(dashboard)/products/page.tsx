@@ -41,7 +41,7 @@ const Products = () => {
       <div className="flex items-center justify-between">
         <p className="font-bold">Products</p>
         <Button
-          className="bg-blue-500 text-white"
+          className="primary-gradient text-white"
           onClick={() => router.push("/products/new")}
         >
           <Plus className="mr-2 size-4" />

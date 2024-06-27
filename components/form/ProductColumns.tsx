@@ -12,7 +12,7 @@ export const columns: ColumnDef<ProductType>[] = [
     cell: ({ row }) => (
       <Link
         href={`/products/${row.original._id}`}
-        className="hover:text-red-500"
+        className="primary-text-gradient"
       >
         {row.original.title}
       </Link>

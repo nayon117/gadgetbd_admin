@@ -46,13 +46,13 @@ const Delete: React.FC<DeleteProps> = ({ item, id }) => {
   return (
     <AlertDialog>
       <AlertDialogTrigger>
-        <Button className="bg-red-500 text-white">
+        <Button className="primary-gradient text-white">
           <Trash className="size-5" />
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent className="bg-white text-gray-500">
         <AlertDialogHeader>
-          <AlertDialogTitle className="text-red-500">
+          <AlertDialogTitle className="primary-text-gradient">
             Are you absolutely sure?
           </AlertDialogTitle>
           <AlertDialogDescription>
@@ -63,7 +63,7 @@ const Delete: React.FC<DeleteProps> = ({ item, id }) => {
         <AlertDialogFooter>
           <AlertDialogCancel disabled={loading}>Cancel</AlertDialogCancel>
           <AlertDialogAction
-            className="bg-red-500 text-white"
+            className="primary-gradient text-white"
             onClick={onDelete}
             disabled={loading}
           >

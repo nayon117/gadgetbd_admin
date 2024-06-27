@@ -297,16 +297,16 @@ const ProductForm: React.FC<ProductFormProps> = ({ initialData }) => {
             )}
           </div>
 
-          <div className="flex gap-10">
-            <Button type="submit" className="bg-blue-500 text-white">
-              Submit
-            </Button>
+          <div className="flex gap-10"> 
             <Button
               type="button"
               onClick={() => router.push("/products")}
-              className="bg-blue-500 text-white"
+              className="primary-gradient text-white"
             >
               Discard
+            </Button>
+            <Button type="submit" className="primary-gradient text-white">
+              Submit
             </Button>
           </div>
         </form>

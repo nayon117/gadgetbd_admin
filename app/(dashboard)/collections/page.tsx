@@ -40,7 +40,7 @@ const Collections = () => {
       <div className="flex items-center justify-between">
         <p className="font-bold">Collections</p>
         <Button
-          className="bg-blue-400 text-white"
+          className="primary-gradient text-white"
           onClick={() => router.push("/collections/new")}
         >
           <Plus className="mr-2 size-4" />
