@@ -10,12 +10,7 @@ import { Separator } from "@/components/ui/separator";
 import { DataTable } from "@/components/custom ui/DataTable";
 import { ProductType } from "@/lib/actions/shared.types";
 import { columns } from "@/components/form/ProductColumns";
-import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "GadgetBD - Products",
-  description: "Admin dashboard to manage GadgetBD's Product data",
-};
 
 const Products = () => {
   const router = useRouter();

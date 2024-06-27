@@ -3,13 +3,8 @@ import { DataTable } from "@/components/custom ui/DataTable";
 import Loader from "@/components/custom ui/Loader";
 import { columns } from "@/components/shared/OrderColumn";
 import { Separator } from "@/components/ui/separator";
-import { Metadata } from "next";
 import { useEffect, useState } from "react";
 
-export const metadata: Metadata = {
-  title: "GadgetBD - Orders",
-  description: "Admin dashboard to manage GadgetBD's Order data",
-};
 
 const Orders = () => {
   const [loading, setLoading] = useState(true);

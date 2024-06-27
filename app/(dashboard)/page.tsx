@@ -8,6 +8,12 @@ import {
 } from "@/lib/actions/action";
 
 import { CircleDollarSign, ShoppingBag, UserRound } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "GadgetBD - Dashboard",
+  description: "Admin dashboard to manage GadgetBD's data",
+};
 
 export default async function Home() {
   const totalRevenue = await getTotalSales().then((data) => data.totalRevenue);
@@ -41,7 +47,6 @@ export default async function Home() {
             <p className="font-bold">{totalOrders}</p>
           </CardContent>
         </Card>
-
         <Card>
           <CardHeader className="flex flex-row items-center justify-between">
             <CardTitle>Total Customer</CardTitle>

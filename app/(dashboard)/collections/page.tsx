@@ -9,12 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import Loader from "@/components/custom ui/Loader";
 import { columns } from "@/components/form/CollectionColumns";
-import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "GadgetBD - Collections",
-  description: "Admin dashboard to manage GadgetBD's Collection data",
-};
 
 const Collections = () => {
   const router = useRouter();
