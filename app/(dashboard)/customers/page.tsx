@@ -3,10 +3,15 @@ import { columns } from "@/components/shared/CustomerColumns";
 import { Separator } from "@/components/ui/separator";
 import Customer from "@/database/models/customer.model";
 import { connectToDatabase } from "@/lib/mongoose";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "GadgetBD - Customers",
+  description: "Admin dashboard to manage GadgetBD's Customer data",
+};
 
 const Customers = async () => {
   await connectToDatabase();
-
   const customers = await Customer.find().sort({ createdAt: "desc" });
 
   return (
