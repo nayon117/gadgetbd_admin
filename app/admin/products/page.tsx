@@ -43,7 +43,7 @@ const Products = () => {
         <p className="font-bold">Products</p>
         <Button
           className="primary-gradient text-white"
-          onClick={() => router.push("/products/new")}
+          onClick={() => router.push("/admin/products/new")}
         >
           <Plus className="mr-2 size-4" />
           Create Product

@@ -1,24 +1,22 @@
-// import { clerkMiddleware } from "@clerk/nextjs/server";
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
+import { decryptKey } from './lib/utils';
 
-// export default clerkMiddleware({
-//   publicRoutes: ["/api/:path*"]
-// });
+export function middleware(request: NextRequest) {
+  const url = request.nextUrl.clone();
 
-// export const config = {
-//   matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)"],
-// };
-
-import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
-
-const isPublicRoute = createRouteMatcher(['/sign-in(.*)', '/sign-up(.*)','/api/:path*']);
-
-export default clerkMiddleware((auth, request) => {
-  if(!isPublicRoute(request)) {
-    auth().protect();
+  if (url.pathname.startsWith('/admin')) {
+    const encryptedKey = request.cookies.get('accessKey')?.value;
+    const accessKey = encryptedKey && decryptKey(encryptedKey);
+    if (accessKey !== process.env.NEXT_PUBLIC_ADMIN_PASSKEY) {
+      url.pathname = '/';
+      return NextResponse.redirect(url);
+    }
   }
-});
+
+  return NextResponse.next();
+}
 
 export const config = {
-  matcher: ['/((?!.*\\..*|_next).*)', '/', '/(api|trpc)(.*)'],
+  matcher: ['/admin/:path*'],
 };
-

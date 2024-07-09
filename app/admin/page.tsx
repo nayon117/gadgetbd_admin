@@ -15,7 +15,8 @@ export const metadata: Metadata = {
   description: "Admin dashboard to manage GadgetBD's data",
 };
 
-export default async function Home() {
+export default async function Admin() {
+
   const totalRevenue = await getTotalSales().then((data) => data.totalRevenue);
   const totalOrders = await getTotalSales().then((data) => data.totalOrders);
   const totalCustomers = await getTotalCustomers();
@@ -26,7 +27,6 @@ export default async function Home() {
     <div className="px-8 py-10">
       <p className="font-bold">Dashboard</p>
       <Separator className="my-5 bg-gray-400" />
-
       <div className="grid grid-cols-2 gap-10 md:grid-cols-3">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between">

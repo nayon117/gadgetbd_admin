@@ -11,7 +11,7 @@ export const columns: ColumnDef<OrderColumnType>[] = [
     cell: ({ row }) => {
       return (
         <Link
-          href={`/orders/${row.original._id}`}
+          href={`/admin/orders/${row.original._id}`}
           className="primary-text-gradient"
         >
           {row.original._id}

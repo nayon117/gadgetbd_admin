@@ -3,23 +3,23 @@
 
   export const dashLinks = [
     {
-      url: "/",
+      url: "/admin",
       label: "Dashboard",
     },
     {
-      url: "/collections",
+      url: "/admin/collections",
       label: "Collections",
     },
     {
-      url: "/products",
+      url: "/admin/products",
       label: "Products",
     },
     {
-      url: "/orders",
+      url: "/admin/orders",
       label: "Orders",
     },
     {
-      url: "/customers",
+      url: "/admin/customers",
       label: "Customers",
     },
   ];

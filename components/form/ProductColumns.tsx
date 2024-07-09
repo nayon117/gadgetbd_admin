@@ -11,7 +11,7 @@ export const columns: ColumnDef<ProductType>[] = [
     header: "Title",
     cell: ({ row }) => (
       <Link
-        href={`/products/${row.original._id}`}
+        href={`/admin/products/${row.original._id}`}
         className="primary-text-gradient"
       >
         {row.original.title}

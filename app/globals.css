@@ -20,11 +20,34 @@ body {
   .flex-start {
     @apply flex justify-start items-center;
   }
+  .text-36-bold {
+    @apply text-[36px] leading-[40px] font-bold;
+  }
 
   .card-wrapper {
     @apply bg-light-900 dark:dark-gradient shadow-light-100 dark:shadow-dark-100;
   }
 
+  .shad-otp {
+    @apply w-full flex justify-between !important;
+  }
+
+  .shad-otp-slot {
+    @apply text-36-bold text-white justify-center flex border border-light-500 rounded-lg size-16 gap-4 !important;
+  }
+
+  .shad-alert-dialog {
+    @apply space-y-5 bg-dark-400 border-dark-500 outline-none !important;
+  }
+  .shad-error {
+    @apply text-red-400 !important;
+  }
+  .text-14-regular {
+    @apply text-[14px] leading-[18px] font-normal;
+  }
+  .shad-primary-btn {
+    @apply bg-purple-500 text-white !important;
+  }
   .btn {
     @apply bg-light-800 dark:bg-dark-300 !important;
   }

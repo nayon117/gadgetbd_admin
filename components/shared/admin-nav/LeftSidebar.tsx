@@ -1,7 +1,7 @@
 "use client";
 
 import { dashLinks } from "@/constants";
-import { UserButton } from "@clerk/nextjs";
+// import { UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -30,10 +30,10 @@ const LeftSideBar = () => {
         ))}
       </div>
 
-      <div className="flex items-center gap-4 font-medium text-black">
+      {/* <div className="flex items-center gap-4 font-medium text-black">
         <UserButton />
         <p>Edit Profile</p>
-      </div>
+      </div> */}
     </div>
   );
 };

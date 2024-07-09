@@ -11,7 +11,7 @@ export const columns: ColumnDef<CollectionType>[] = [
     header: "Title",
     cell: ({ row }) => (
       <Link
-        href={`/collections/${row.original._id}`}
+        href={`/admin/collections/${row.original._id}`}
         className="primary-text-gradient"
       >
         {row.original.title}

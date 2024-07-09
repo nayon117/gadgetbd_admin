@@ -42,7 +42,7 @@ const Collections = () => {
         <p className="font-bold">Collections</p>
         <Button
           className="primary-gradient text-white"
-          onClick={() => router.push("/collections/new")}
+          onClick={() => router.push("/admin/collections/new")}
         >
           <Plus className="mr-2 size-4" />
           Create Collection
