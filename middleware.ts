@@ -1,22 +1,37 @@
+// middleware.ts
 import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
-import { decryptKey } from './lib/utils';
+import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
+import { decryptKey } from '@/lib/utils';
 
-export function middleware(request: NextRequest) {
-  const url = request.nextUrl.clone();
+const isPublicRoute = createRouteMatcher(['/sign-in(.*)', '/sign-up(.*)', '/api/:path*']);
 
-  if (url.pathname.startsWith('/admin')) {
-    const encryptedKey = request.cookies.get('accessKey')?.value;
-    const accessKey = encryptedKey && decryptKey(encryptedKey);
-    if (accessKey !== process.env.NEXT_PUBLIC_ADMIN_PASSKEY) {
-      url.pathname = '/';
-      return NextResponse.redirect(url);
+export default clerkMiddleware((auth, request) => {
+  const response = NextResponse.next();
+
+  if (!isPublicRoute(request)) {
+    auth().protect();
+  }
+
+  const passkeyCookie = request.cookies.get('accessKey');
+  let decryptedKey: string | null = null;
+
+  if (passkeyCookie) {
+    try {
+      decryptedKey = decryptKey(passkeyCookie.value);
+    } catch (e) {
+      console.error('Error decrypting passkey:', e);
     }
   }
 
-  return NextResponse.next();
-}
+  if (request.nextUrl.pathname.startsWith('/admin')) {
+    if (decryptedKey !== process.env.NEXT_PUBLIC_ADMIN_PASSKEY) {
+      return NextResponse.redirect(new URL('/', request.url));
+    }
+  }
+
+  return response;
+});
 
 export const config = {
-  matcher: ['/admin/:path*'],
+  matcher: ['/((?!.*\\..*|_next).*)', '/', '/(api|trpc)(.*)'],
 };

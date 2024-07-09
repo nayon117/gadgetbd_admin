@@ -5,6 +5,7 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
 import { dashLinks } from "@/constants";
+import { UserButton } from "@clerk/nextjs";
 
 const TopBar = () => {
   const [dropdownMenu, setDropdownMenu] = useState(false);
@@ -46,6 +47,7 @@ const TopBar = () => {
             ))}
           </div>
         )}
+         <UserButton />
       </div>
     </div>
   );
