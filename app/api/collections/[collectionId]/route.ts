@@ -1,7 +1,6 @@
 import Collection from "@/database/models/collection.model";
 import Product from "@/database/models/product.model";
 import { connectToDatabase } from "@/lib/mongoose";
-// import { auth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 
 export const GET = async (
@@ -35,11 +34,6 @@ export const POST = async (
   { params }: { params: { collectionId: string } }
 ) => {
   try {
-    // const { userId } = auth();
-
-    // if (!userId) {
-    //   return new NextResponse("Unauthorized", { status: 401 });
-    // }
 
     await connectToDatabase();
 
@@ -75,11 +69,6 @@ export const DELETE = async (
   { params }: { params: { collectionId: string } }
 ) => {
   try {
-    // const { userId } = auth();
-
-    // if (!userId) {
-    //   return new NextResponse("Unauthorized", { status: 401 });
-    // }
 
     await connectToDatabase();
 

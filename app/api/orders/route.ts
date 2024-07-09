@@ -1,5 +1,3 @@
-
-
 import { NextRequest, NextResponse } from "next/server";
 import { format } from "date-fns";
 import { connectToDatabase } from "@/lib/mongoose";

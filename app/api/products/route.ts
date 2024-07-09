@@ -1,19 +1,13 @@
 import Collection from "@/database/models/collection.model";
 import Product from "@/database/models/product.model";
 import { connectToDatabase } from "@/lib/mongoose";
-// import { auth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 
 
 
 export const POST = async (req: NextRequest) => {
   try {
-    // const { userId } = auth();
-
-    // if (!userId) {
-    //   return new NextResponse("Unauthorized", { status: 401 });
-    // }
-
+  
     await connectToDatabase();
 
     const {

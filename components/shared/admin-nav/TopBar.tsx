@@ -1,6 +1,5 @@
 "use client";
 
-import { UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
@@ -47,7 +46,6 @@ const TopBar = () => {
             ))}
           </div>
         )}
-        <UserButton />
       </div>
     </div>
   );
